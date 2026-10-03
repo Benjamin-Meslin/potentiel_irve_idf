@@ -1,0 +1,15 @@
+# Données volumineuses (non versionnées)
+*.gpkg
+*.geojson
+*.gdb
+*.csv
+!requirements.txt
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Système
+.DS_Store
+Thumbs.db

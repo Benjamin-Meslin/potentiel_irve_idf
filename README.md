@@ -45,7 +45,7 @@ Pour chaque commune calculable :
 score = ( rang(densité) + rang(temps de trajet) + (1 − rang(équipement)) ) / 3 × 100
 ```
 
-Chaque dimension est transformée en **rang percentile** — le score est insensible aux distributions et aux unités, et donc robuste aux valeurs extrêmes. Les communes sans itinéraire calculable sont exclues et étiquetées « Non calculé » (57 cas initiaux, diagnostic et correction documentés dans la note méthodologique). 
+Chaque dimension est transformée en **rang percentile** — le score est insensible aux distributions et aux unités, et donc robuste aux valeurs extrêmes. Les communes sans itinéraire calculable sont exclues du score et étiquetées « Non calculé ».
 
 ## 🔍 Enseignements sur la donnée
 
@@ -61,7 +61,7 @@ Un projet géodata, c'est d'abord de la qualité de données. Trois découvertes
 ├── README.md                  # ce fichier
 ├── docs/
 │   ├── AMC_IRVE.pdf           # carte de synthèse A3
-│   └── note_methodo.md        # note méthodologique (à venir)
+│   └── note_methodo.md        # note méthodologique
 ├── scripts/
 │   ├── main.py                # 1. acquisition IRVE + communes, jointures, densités
 │   ├── score_composite.py     # 2. score composite + classes (après Closest Facility dans ArcGIS Pro)

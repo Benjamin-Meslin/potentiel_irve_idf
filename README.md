@@ -17,9 +17,9 @@ La recharge rapide est le maillon critique de l'électrification : un automobili
 
 | Livrable                                                                                | Accès                                                                                         |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| 🗺️ **Carte de synthèse A3** (choroplèthe communale, 5 classes)                         | [`docs/AMC_IRVE.pdf`](docs/AMC_IRVE.pdf)                                                      |
-| 📊 **Dashboard interactif** (KPI, filtre département, seuil d'éloignement paramétrable) | [Looker Studio](https://datastudio.google.com/reporting/8da5f0e4-b1c3-4bf1-a26c-6cc4834aef5c) |
-| 🧮 **Scripts** (acquisition, score composite, export)                                   | [`scripts/`](scripts/)                                                                        |
+|  **Carte de synthèse A3** (choroplèthe communale, 5 classes)                         | [`docs/AMC_IRVE.pdf`](docs/AMC_IRVE.pdf)                                                      |
+|  **Dashboard interactif** (KPI, filtre département, seuil d'éloignement paramétrable) | [Looker Studio](https://datastudio.google.com/reporting/8da5f0e4-b1c3-4bf1-a26c-6cc4834aef5c) |
+|  **Scripts** (acquisition, score composite, export)                                   | [`scripts/`](scripts/)                                                                        |
 
 
 

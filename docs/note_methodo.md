@@ -4,11 +4,11 @@
 
 Cette note documente la chaîne de traitement, les choix méthodologiques et les contrôles qualité du projet. Elle accompagne le [README](../README.md) du dépôt.
 
-## 1. Objectif et périmètre
+## Objectif et périmètre
 
 Hiérarchiser les **1 266 communes d'Île-de-France** selon leur potentiel d'accueil de bornes de recharge rapides (**puissance ≥ 150 kW**), en croisant demande (population), offre existante (points de charge) et éloignement (temps de trajet routier à la borne la plus proche).
 
-## 2. Sources et millésimes
+## Sources et millésimes
 
 | Source | Producteur | Version / date | Usage |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@ Hiérarchiser les **1 266 communes d'Île-de-France** selon leur potentiel d'acc
 
 La base IRVE est **actualisée en continu** : tout comptage de points de charge n'a de sens que rapporté à sa date d'extraction. Ce millésime est indiqué dans le dashboard interactif.
 
-## 3. Chaîne de traitement
+## Chaîne de traitement
 
 **Étape 1 — Acquisition et préparation** (`scripts/main.py`, Python / pandas / GeoPandas)
 
@@ -46,18 +46,18 @@ score = ( rang(densité) + rang(temps de trajet) + (1 − rang(équipement)) ) /
 - Export CSV chargé dans **BigQuery**, dashboard **Looker Studio** (KPI, filtre département, seuil d'éloignement paramétrable) ;
 - Carte de synthèse A3 mise en page dans ArcGIS Pro (`docs/AMC_IRVE.pdf`).
 
-## 4. Contrôles qualité
+## Contrôles qualité
 
 - **Effectifs à chaque étape** : chaque script vérifie par `assert` que la chaîne manipule bien **1 266 communes** — jointures spatiales, appariement des itinéraires et exports peuvent perdre ou dupliquer des entités en silence, ce qui fausserait tous les KPI en aval ;
 - Les communes sans itinéraire calculable sont **étiquetées « Non calculé »** plutôt que supprimées : elles restent visibles dans les livrables.
 
-## 5. Points de vigilance documentés
+## Points de vigilance documentés
 
 1. **Dater son extraction** — la base IRVE évolue en continu ; le millésime (28/09/2026) est affiché dans le dashboard.
 2. **L'effet hub** — Coupvray (3 066 habitants) concentre **518 points de charge** (~170 pour 1 000 habitants, record régional, porté par l'A4 et les parkings de Disneyland Paris). Un tel hub écrase toute moyenne brute : c'est le raison d'être des scores par rangs percentiles.
 3. **Compter à chaque étape** — les `assert` d'effectifs protègent chaque maillon de la chaîne.
 
-## 6. Limites
+## Limites
 
 - Le **temps de trajet** est un temps théorique (réseau, sans trafic réel) : proxy d'accessibilité, pas de mesure de terrain ;
 - La **puissance** retenue est la puissance installée, sans information de disponibilité réelle des bornes ;
@@ -65,7 +65,7 @@ score = ( rang(densité) + rang(temps de trajet) + (1 − rang(équipement)) ) /
 - Le score agrège trois dimensions d'importance égale : une pondération différente peut être testée dans `scripts/score_composite.py` ;
 - Périmètre communal : les hétérogénéités intra-urbaines (besoins de quartier) ne sont pas visibles.
 
-## 7. Reproduire
+## Reproduire
 
 ```bash
 pip install -r requirements.txt

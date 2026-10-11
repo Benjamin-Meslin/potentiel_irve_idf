@@ -1,4 +1,4 @@
-# 📐 Note méthodologique — Zones de potentiel IRVE en Île-de-France
+# Note méthodologique — Zones de potentiel IRVE en Île-de-France
 
 **Millésime des données IRVE : extraction du 28/09/2026** · Benjamin Meslin · version 1.0
 
@@ -16,7 +16,7 @@ Hiérarchiser les **1 266 communes d'Île-de-France** selon leur potentiel d'acc
 | API Géo (communes, population, contours) | Insee / IGN | appel du **28/09/2026** | fond communal, population, densités |
 | BD TOPO® (réseau routier) | IGN | édition du **15/06/2026** | jeu de données réseau pour l'analyse d'accessibilité |
 
-⚠️ La base IRVE est **actualisée en continu** : tout comptage de points de charge n'a de sens que rapporté à sa date d'extraction. Ce millésime est indiqué dans le dashboard interactif.
+La base IRVE est **actualisée en continu** : tout comptage de points de charge n'a de sens que rapporté à sa date d'extraction. Ce millésime est indiqué dans le dashboard interactif.
 
 ## 3. Chaîne de traitement
 
